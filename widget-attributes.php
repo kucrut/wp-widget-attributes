@@ -15,7 +15,6 @@ class Kc_Widget_Attributes {
 
 	const VERSION = '0.1';
 
-
 	/**
 	 * Initialize plugin
 	 */
@@ -25,6 +24,9 @@ class Kc_Widget_Attributes {
 
 		// Save widget attributes
 		add_filter( 'widget_update_callback', array( __CLASS__, '_save_attributes' ), 10, 4 );
+
+		// Insert attributes into widget markup
+		add_filter( 'dynamic_sidebar_params', array( __CLASS__, '_insert_attributes' ) );
 	}
 
 
@@ -131,6 +133,63 @@ class Kc_Widget_Attributes {
 		}
 
 		return $instance;
+	}
+
+
+	/**
+	 * Insert attributes into widget markup
+	 *
+	 * @since 0.1
+	 * @filter dynamic_sidebar_params
+	 *
+	 * @param array $params Widget parameters
+	 *
+	 * @return Array
+	 */
+	public static function _insert_attributes( $params ) {
+		global $wp_registered_widgets;
+
+		$widget_id  = $params[0]['widget_id'];
+		$widget_obj = $wp_registered_widgets[ $widget_id ];
+
+		if (
+			!isset( $widget_obj['callback'][0] )
+			|| !is_object( $widget_obj['callback'][0] )
+		) {
+			return $params;
+		}
+
+		$widget_options = get_option( $widget_obj['callback'][0]->option_name );
+		if ( empty( $widget_options ) )
+			return $params;
+
+		$widget_num	= $widget_obj['params'][0]['number'];
+		if ( empty( $widget_options[ $widget_num ] ) )
+			return $params;
+
+		$instance = $widget_options[ $widget_num ];
+
+		// ID
+		if ( ! empty( $instance['widget-id'] ) ) {
+			$params[0]['before_widget'] = preg_replace(
+				'/id=".*?"/',
+				sprintf( 'id="%s"', $instance['widget-id'] ),
+				$params[0]['before_widget'],
+				1
+			);
+		}
+
+		// Classes
+		if ( ! empty( $instance['widget-class'] ) ) {
+			$params[0]['before_widget'] = preg_replace(
+				'/class="/',
+				sprintf( 'class="%s ', $instance['widget-class'] ),
+				$params[0]['before_widget'],
+				1
+			);
+		}
+
+		return $params;
 	}
 }
 
