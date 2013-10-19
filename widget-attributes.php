@@ -45,7 +45,7 @@ class Kc_Widget_Attributes {
 					esc_html__( 'HTML ID', 'widget-attributes' )
 				) ?>
 				<?php printf(
-					'<input type="text" class="widefat" id="%s" name="%s" value="" />',
+					'<input type="text" class="widefat" id="%s" name="%s" value="%s" />',
 					esc_attr( $widget->get_field_id( 'widget-id' ) ),
 					esc_attr( $widget->get_field_name( 'widget-id' ) ),
 					esc_attr( $instance['widget-id'] )
@@ -58,7 +58,7 @@ class Kc_Widget_Attributes {
 					esc_html__( 'HTML Class(es)', 'widget-attributes' )
 				) ?>
 				<?php printf(
-					'<input type="text" class="widefat" id="%s" name="%s" value="" />',
+					'<input type="text" class="widefat" id="%s" name="%s" value="%s" />',
 					esc_attr( $widget->get_field_id( 'widget-class' ) ),
 					esc_attr( $widget->get_field_name( 'widget-class' ) ),
 					esc_attr( $instance['widget-class'] )
