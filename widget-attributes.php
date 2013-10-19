@@ -22,6 +22,9 @@ class Kc_Widget_Attributes {
 	public static function setup() {
 		// Add necessary input on widget configuration form
 		add_action( 'in_widget_form', array( __CLASS__, '_input_fields' ), 10, 3 );
+
+		// Save widget attributes
+		add_filter( 'widget_update_callback', array( __CLASS__, '_save_attributes' ), 10, 4 );
 	}
 
 
@@ -86,6 +89,46 @@ class Kc_Widget_Attributes {
 				'widget-class' => '',
 			)
 		);
+
+		return $instance;
+	}
+
+
+	/**
+	 * Save attributes upon widget saving
+	 *
+	 * @since 0.1
+	 * @wp_hook filter widget_update_callback
+	 *
+	 * @param array  $instance     Current widget instance configuration
+	 * @param array  $new_instance New widget instance configuration
+	 * @param array  $old_instance Old Widget instance configuration
+	 * @param object $widget       Widget object
+	 *
+	 * @return array
+	 */
+	public static function _save_attributes( $instance, $new_instance, $old_instance, $widget ) {
+		// ID
+		if ( !empty( $new_instance['widget-id'] ) ) {
+			$instance['widget-id'] = apply_filters(
+				'widget_attribute_id',
+				sanitize_html_class( $new_instance['widget-id'] )
+			);
+		}
+
+		// Classes
+		if ( !empty( $new_instance['widget-class'] ) ) {
+			$instance['widget-class'] = apply_filters(
+				'widget_attribute_classes',
+				implode(
+					' ',
+					array_map(
+						'sanitize_html_class',
+						explode( ' ', $new_instance['widget-class'] )
+					)
+				)
+			);
+		}
 
 		return $instance;
 	}
