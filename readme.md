@@ -2,6 +2,15 @@
 
 Add custom attributes (classes and ID) to your widgets, the easy way!
 
+## Installation ##
+1. Clone this repo into your WordPress content directory
+```sh
+cd /srv/localhost/wp-content/
+git clone https://github.com/kucrut/wp-widget-attributes.git widget-attributes
+```
+2. Go to *Plugins* and activate *Widget Attributes*
+3. Go to *Appearance* > *Widgets* and add the attributes
+
 ## Filters ##
 You can hook into `widget_attribute_id` and/or `widget_attribute_classes` if you need to validate/sanitize the attributes provided by the user. For example:
 
