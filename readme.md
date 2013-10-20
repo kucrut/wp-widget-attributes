@@ -27,7 +27,7 @@ function my_widget_class_filter( $classes ) {
 }
 ```
 
-## FAQs ##
+## Frequently Asked Questions ##
 
 ### Do I need to add code to my theme's `functions.php` file? ###
 No, you don't. This plugin just works(TM).
