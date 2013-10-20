@@ -29,8 +29,9 @@ YES! You can hook into `widget_attribute_id` and/or `widget_attribute_classes` i
  *
  * @param string $classes Widget class(es), separated by spaces
  */
-function my_widget_class_filter( $classes ) {
+function my_widget_classes_filter( $classes ) {
 	// do your thing...
 	return $classes;
 }
+add_filter( 'widget_attribute_classes', 'my_widget_classes_filter' );
 ```
