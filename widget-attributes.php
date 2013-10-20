@@ -19,15 +19,17 @@ class Kc_Widget_Attributes {
 	 * Initialize plugin
 	 */
 	public static function setup() {
-		// Add necessary input on widget configuration form
-		add_action( 'in_widget_form', array( __CLASS__, '_input_fields' ), 10, 3 );
+		if ( is_admin() ) {
+			// Add necessary input on widget configuration form
+			add_action( 'in_widget_form', array( __CLASS__, '_input_fields' ), 10, 3 );
 
-		// Save widget attributes
-		add_filter( 'widget_update_callback', array( __CLASS__, '_save_attributes' ), 10, 4 );
-
-		// Insert attributes into widget markup
-		if ( ! is_admin() )
+			// Save widget attributes
+			add_filter( 'widget_update_callback', array( __CLASS__, '_save_attributes' ), 10, 4 );
+		}
+		else {
+			// Insert attributes into widget markup
 			add_filter( 'dynamic_sidebar_params', array( __CLASS__, '_insert_attributes' ) );
+		}
 	}
 
 
