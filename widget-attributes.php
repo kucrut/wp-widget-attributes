@@ -2,7 +2,7 @@
 
 /**
  * Plugin name: Widget Attributes
- * Plugin URI: http://kucrut.org/
+ * Plugin URI: http://kucrut.org/widget-attributes/
  * Description: Assign custom widget attributes (classes and ID)
  * Version: 0.2
  * Author: Dzikri Aziz
