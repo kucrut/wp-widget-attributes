@@ -15,7 +15,7 @@ Add custom attributes (classes and ID) to your widgets, the easy way!
 ## Frequently Asked Questions ##
 
 ### Do I need to add code to my theme's `functions.php` file? ###
-No, you don't. This plugin just works(TM).
+No, you don't. This plugin just works(TM). However, you will need to add the style for the classes you use for your widgets.
 
 ### Is there any known bug? ###
 In short, maybe. If your theme or one of your plugins is replacing the default widget callback in a weird way, this plugin may not work.
