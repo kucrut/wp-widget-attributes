@@ -26,7 +26,8 @@ class Kc_Widget_Attributes {
 		add_filter( 'widget_update_callback', array( __CLASS__, '_save_attributes' ), 10, 4 );
 
 		// Insert attributes into widget markup
-		add_filter( 'dynamic_sidebar_params', array( __CLASS__, '_insert_attributes' ) );
+		if ( ! is_admin() )
+			add_filter( 'dynamic_sidebar_params', array( __CLASS__, '_insert_attributes' ) );
 	}
 
 
