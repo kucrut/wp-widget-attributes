@@ -2,6 +2,13 @@
 
 Add custom attributes (classes and ID) to your widgets, the easy way!
 
+## Description ##
+This plugin is intended to be used by theme authors that need to have custom attributes for the widgets so they can define common classes for similar widgets, etc.
+
+When activated, you'll get two additional input fields in the widget configuration forms, where you can assign a custom ID and classes for the widgets.
+
+Please note that before the attributes are saved, they will be passed through [sanitize_html_class()](http://core.trac.wordpress.org/browser/tags/3.6.1/wp-includes/formatting.php#L1079) so all blacklisted characters will be stripped.
+
 ## Installation ##
 1. Clone this repo into your WordPress content directory
 
