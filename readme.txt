@@ -4,7 +4,7 @@ Donate link: http://kucrut.org/
 Tags: widget
 Requires at least: 3.6.1
 Tested up to: 3.7-RC1
-Stable tag: 0.2
+Stable tag: 0.2.1
 License: GPLv2
 
 Add custom attributes (classes and ID) to your widgets, the easy way!
@@ -22,6 +22,9 @@ Please note that before the attributes are saved, they will be passed through [s
 3. Go to *Appearance* > *Widgets* and add the attributes
 
 == Changelog ==
+
+= 0.2.1 =
+* Fix attributes saving, props [@iamunick](https://github.com/iamunick)
 
 = 0.2 =
 * Cleanup
