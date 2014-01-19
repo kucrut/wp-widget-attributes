@@ -113,6 +113,8 @@ class Kc_Widget_Attributes {
 	 * @return array
 	 */
 	public static function _save_attributes( $instance, $new_instance, $old_instance, $widget ) {
+		$instance['widget-id'] = $instance['widget-class'] = '';
+
 		// ID
 		if ( !empty( $new_instance['widget-id'] ) ) {
 			$instance['widget-id'] = apply_filters(
@@ -133,6 +135,9 @@ class Kc_Widget_Attributes {
 					)
 				)
 			);
+		}
+		else {
+			$instance['widget-class'] = '';
 		}
 
 		return $instance;
