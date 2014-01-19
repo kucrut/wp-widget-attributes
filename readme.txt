@@ -3,7 +3,7 @@ Contributors: kucrut
 Donate link: http://kucrut.org/
 Tags: widget
 Requires at least: 3.6.1
-Tested up to: 3.7-RC1
+Tested up to: 3.8
 Stable tag: 0.2.1
 License: GPLv2
 
