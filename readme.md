@@ -6,10 +6,10 @@ Add custom attributes (classes and ID) to your widgets, the easy way!
 **Contributors:** [kucrut](http://profiles.wordpress.org/kucrut)  
 **Tags:** [widget](http://wordpress.org/plugins/tags/widget)  
 **Requires at least:** 3.6.1  
-**Tested up to:** 3.8  
+**Tested up to:** 3.9  
 **Stable tag:** 0.2.1  
 **License:** [GPLv2]()  
-**Donate link:** http://kucrut.org/  
+**Donate link:** http://kucrut.org/#coffee  
 
 ## Description ##
 
@@ -28,6 +28,9 @@ Please note that before the attributes are saved, they will be passed through [s
 3. Go to *Appearance* > *Widgets* and add the attributes
 
 ## Changelog ##
+
+### 0.2.2 ###
+* Update compatibility info
 
 ### 0.2.1 ###
 * Fix attributes saving, props [@iamunick](https://github.com/iamunick)
@@ -50,7 +53,7 @@ In short, maybe. If your theme or one of your plugins is replacing the default w
 ### Do you provide filters? ###
 YES! You can hook into `widget_attribute_id` and/or `widget_attribute_classes` if you need to validate/sanitize the attributes provided by the user. For example:
 
-`
+```php
 /**
  * Check for widget classes provided by the user
  *
@@ -61,9 +64,16 @@ function my_widget_classes_filter( $classes ) {
 	return $classes;
 }
 add_filter( 'widget_attribute_classes', 'my_widget_classes_filter' );
-`
+```
 
 
 ## Screenshots ##
 
+### Widget configuration form
+
+![Widget configuration form](assets/screenshot-1.png)
+
+### Widget attributes inserted into the markup
+
+![Widget attributes inserted into the markup](assets/screenshot-2.png)
 

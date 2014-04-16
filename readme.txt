@@ -1,9 +1,9 @@
 === Widget Attributes ===
 Contributors: kucrut
-Donate link: http://kucrut.org/
+Donate link: http://kucrut.org/#coffee
 Tags: widget
 Requires at least: 3.6.1
-Tested up to: 3.8
+Tested up to: 3.9
 Stable tag: 0.2.1
 License: GPLv2
 
@@ -22,6 +22,9 @@ Please note that before the attributes are saved, they will be passed through [s
 3. Go to *Appearance* > *Widgets* and add the attributes
 
 == Changelog ==
+
+= 0.2.2 =
+* Update compatibility info
 
 = 0.2.1 =
 * Fix attributes saving, props [@iamunick](https://github.com/iamunick)
