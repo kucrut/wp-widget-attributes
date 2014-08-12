@@ -6,8 +6,8 @@ Add custom attributes (classes and ID) to your widgets, the easy way!
 **Contributors:** [kucrut](http://profiles.wordpress.org/kucrut)  
 **Tags:** [widget](http://wordpress.org/plugins/tags/widget)  
 **Requires at least:** 3.6.1  
-**Tested up to:** 3.9  
-**Stable tag:** 0.2.1  
+**Tested up to:** 3.9.2  
+**Stable tag:** 0.2.2  
 **License:** [GPLv2]()  
 **Donate link:** http://kucrut.org/#coffee  
 

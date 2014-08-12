@@ -3,8 +3,8 @@ Contributors: kucrut
 Donate link: http://kucrut.org/#coffee
 Tags: widget
 Requires at least: 3.6.1
-Tested up to: 3.9
-Stable tag: 0.2.1
+Tested up to: 3.9.2
+Stable tag: 0.2.2
 License: GPLv2
 
 Add custom attributes (classes and ID) to your widgets, the easy way!
